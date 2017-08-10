@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBPayrollModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBPayroll.dbo.GsisTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="GsisTable">
+    <Key>
+      <PropertyRef Name="percentage" />
+    </Key>
+    <Property Name="percentage" Type="float" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBPayroll.dbo.PagibigTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PagibigTable">
+    <Key>
+      <PropertyRef Name="percentage" />
+    </Key>
+    <Property Name="rangeMin" Type="float" />
+    <Property Name="rangeMax" Type="float" />
+    <Property Name="percentage" Type="float" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBPayroll.dbo.PhilhealthTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="PhilhealthTable">
+    <Key>
+      <PropertyRef Name="contribution" />
+    </Key>
+    <Property Name="rangeMin" Type="float" />
+    <Property Name="rangeMax" Type="float" />
+    <Property Name="contribution" Type="float" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBPayroll.dbo.SssTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SssTable">
+    <Key>
+      <PropertyRef Name="contribution" />
+    </Key>
+    <Property Name="rangeMin" Type="float" />
+    <Property Name="rangeMax" Type="float" />
+    <Property Name="contribution" Type="float" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBPayroll.dbo.TaxTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TaxTable">
+    <Key>
+      <PropertyRef Name="status" />
+      <PropertyRef Name="bracket" />
+      <PropertyRef Name="rangeMax" />
+      <PropertyRef Name="period" />
+    </Key>
+    <Property Name="status" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="bracket" Type="int" Nullable="false" />
+    <Property Name="rangeMax" Type="float" Nullable="false" />
+    <Property Name="period" Type="bit" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBPayroll.dbo.TaxTableExemption' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TaxTableExemption">
+    <Key>
+      <PropertyRef Name="bracket" />
+      <PropertyRef Name="exemption" />
+      <PropertyRef Name="percentage" />
+      <PropertyRef Name="period" />
+    </Key>
+    <Property Name="bracket" Type="int" Nullable="false" />
+    <Property Name="exemption" Type="float" Nullable="false" />
+    <Property Name="percentage" Type="float" Nullable="false" />
+    <Property Name="period" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DBPayrollModelStoreContainer">
+    <EntitySet Name="GsisTable" EntityType="Self.GsisTable" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [GsisTable].[percentage] AS [percentage]
+    FROM [dbo].[GsisTable] AS [GsisTable]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PagibigTable" EntityType="Self.PagibigTable" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PagibigTable].[rangeMin] AS [rangeMin], 
+    [PagibigTable].[rangeMax] AS [rangeMax], 
+    [PagibigTable].[percentage] AS [percentage]
+    FROM [dbo].[PagibigTable] AS [PagibigTable]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PhilhealthTable" EntityType="Self.PhilhealthTable" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PhilhealthTable].[rangeMin] AS [rangeMin], 
+    [PhilhealthTable].[rangeMax] AS [rangeMax], 
+    [PhilhealthTable].[contribution] AS [contribution]
+    FROM [dbo].[PhilhealthTable] AS [PhilhealthTable]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SssTable" EntityType="Self.SssTable" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SssTable].[rangeMin] AS [rangeMin], 
+    [SssTable].[rangeMax] AS [rangeMax], 
+    [SssTable].[contribution] AS [contribution]
+    FROM [dbo].[SssTable] AS [SssTable]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TaxTable" EntityType="Self.TaxTable" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TaxTable].[status] AS [status], 
+    [TaxTable].[bracket] AS [bracket], 
+    [TaxTable].[rangeMax] AS [rangeMax], 
+    [TaxTable].[period] AS [period]
+    FROM [dbo].[TaxTable] AS [TaxTable]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TaxTableExemption" EntityType="Self.TaxTableExemption" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TaxTableExemption].[bracket] AS [bracket], 
+    [TaxTableExemption].[exemption] AS [exemption], 
+    [TaxTableExemption].[percentage] AS [percentage], 
+    [TaxTableExemption].[period] AS [period]
+    FROM [dbo].[TaxTableExemption] AS [TaxTableExemption]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

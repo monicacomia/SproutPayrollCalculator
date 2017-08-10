@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBPayrollModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="GsisTable">
+    <Key>
+      <PropertyRef Name="percentage" />
+    </Key>
+    <Property Name="percentage" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PagibigTable">
+    <Key>
+      <PropertyRef Name="percentage" />
+    </Key>
+    <Property Name="rangeMin" Type="Double" />
+    <Property Name="rangeMax" Type="Double" />
+    <Property Name="percentage" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PhilhealthTable">
+    <Key>
+      <PropertyRef Name="contribution" />
+    </Key>
+    <Property Name="rangeMin" Type="Double" />
+    <Property Name="rangeMax" Type="Double" />
+    <Property Name="contribution" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SssTable">
+    <Key>
+      <PropertyRef Name="contribution" />
+    </Key>
+    <Property Name="rangeMin" Type="Double" />
+    <Property Name="rangeMax" Type="Double" />
+    <Property Name="contribution" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaxTable">
+    <Key>
+      <PropertyRef Name="status" />
+      <PropertyRef Name="bracket" />
+      <PropertyRef Name="rangeMax" />
+      <PropertyRef Name="period" />
+    </Key>
+    <Property Name="status" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="bracket" Type="Int32" Nullable="false" />
+    <Property Name="rangeMax" Type="Double" Nullable="false" />
+    <Property Name="period" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaxTableExemption">
+    <Key>
+      <PropertyRef Name="bracket" />
+      <PropertyRef Name="exemption" />
+      <PropertyRef Name="percentage" />
+      <PropertyRef Name="period" />
+    </Key>
+    <Property Name="bracket" Type="Int32" Nullable="false" />
+    <Property Name="exemption" Type="Double" Nullable="false" />
+    <Property Name="percentage" Type="Double" Nullable="false" />
+    <Property Name="period" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DBPayrollEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="GsisTables" EntityType="Self.GsisTable" />
+    <EntitySet Name="PagibigTables" EntityType="Self.PagibigTable" />
+    <EntitySet Name="PhilhealthTables" EntityType="Self.PhilhealthTable" />
+    <EntitySet Name="SssTables" EntityType="Self.SssTable" />
+    <EntitySet Name="TaxTables" EntityType="Self.TaxTable" />
+    <EntitySet Name="TaxTableExemptions" EntityType="Self.TaxTableExemption" />
+  </EntityContainer>
+</Schema>

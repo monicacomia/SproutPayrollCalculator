@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBPayrollModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DBPayroll.dbo.GsisTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="GsisTable">
+          <Key>
+            <PropertyRef Name="percentage" />
+          </Key>
+          <Property Name="percentage" Type="float" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DBPayroll.dbo.PagibigTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PagibigTable">
+          <Key>
+            <PropertyRef Name="percentage" />
+          </Key>
+          <Property Name="rangeMin" Type="float" />
+          <Property Name="rangeMax" Type="float" />
+          <Property Name="percentage" Type="float" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DBPayroll.dbo.PhilhealthTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PhilhealthTable">
+          <Key>
+            <PropertyRef Name="contribution" />
+          </Key>
+          <Property Name="rangeMin" Type="float" />
+          <Property Name="rangeMax" Type="float" />
+          <Property Name="contribution" Type="float" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DBPayroll.dbo.SssTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SssTable">
+          <Key>
+            <PropertyRef Name="contribution" />
+          </Key>
+          <Property Name="rangeMin" Type="float" />
+          <Property Name="rangeMax" Type="float" />
+          <Property Name="contribution" Type="float" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DBPayroll.dbo.TaxTable' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TaxTable">
+          <Key>
+            <PropertyRef Name="status" />
+            <PropertyRef Name="bracket" />
+            <PropertyRef Name="rangeMax" />
+            <PropertyRef Name="period" />
+          </Key>
+          <Property Name="status" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="bracket" Type="int" Nullable="false" />
+          <Property Name="rangeMax" Type="float" Nullable="false" />
+          <Property Name="period" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DBPayroll.dbo.TaxTableExemption' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TaxTableExemption">
+          <Key>
+            <PropertyRef Name="bracket" />
+            <PropertyRef Name="exemption" />
+            <PropertyRef Name="percentage" />
+            <PropertyRef Name="period" />
+          </Key>
+          <Property Name="bracket" Type="int" Nullable="false" />
+          <Property Name="exemption" Type="float" Nullable="false" />
+          <Property Name="percentage" Type="float" Nullable="false" />
+          <Property Name="period" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DBPayrollModelStoreContainer">
+          <EntitySet Name="GsisTable" EntityType="Self.GsisTable" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [GsisTable].[percentage] AS [percentage]
+    FROM [dbo].[GsisTable] AS [GsisTable]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PagibigTable" EntityType="Self.PagibigTable" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PagibigTable].[rangeMin] AS [rangeMin], 
+    [PagibigTable].[rangeMax] AS [rangeMax], 
+    [PagibigTable].[percentage] AS [percentage]
+    FROM [dbo].[PagibigTable] AS [PagibigTable]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PhilhealthTable" EntityType="Self.PhilhealthTable" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PhilhealthTable].[rangeMin] AS [rangeMin], 
+    [PhilhealthTable].[rangeMax] AS [rangeMax], 
+    [PhilhealthTable].[contribution] AS [contribution]
+    FROM [dbo].[PhilhealthTable] AS [PhilhealthTable]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SssTable" EntityType="Self.SssTable" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SssTable].[rangeMin] AS [rangeMin], 
+    [SssTable].[rangeMax] AS [rangeMax], 
+    [SssTable].[contribution] AS [contribution]
+    FROM [dbo].[SssTable] AS [SssTable]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TaxTable" EntityType="Self.TaxTable" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TaxTable].[status] AS [status], 
+    [TaxTable].[bracket] AS [bracket], 
+    [TaxTable].[rangeMax] AS [rangeMax], 
+    [TaxTable].[period] AS [period]
+    FROM [dbo].[TaxTable] AS [TaxTable]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TaxTableExemption" EntityType="Self.TaxTableExemption" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TaxTableExemption].[bracket] AS [bracket], 
+    [TaxTableExemption].[exemption] AS [exemption], 
+    [TaxTableExemption].[percentage] AS [percentage], 
+    [TaxTableExemption].[period] AS [period]
+    FROM [dbo].[TaxTableExemption] AS [TaxTableExemption]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBPayrollModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="GsisTable">
+          <Key>
+            <PropertyRef Name="percentage" />
+          </Key>
+          <Property Name="percentage" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PagibigTable">
+          <Key>
+            <PropertyRef Name="percentage" />
+          </Key>
+          <Property Name="rangeMin" Type="Double" />
+          <Property Name="rangeMax" Type="Double" />
+          <Property Name="percentage" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PhilhealthTable">
+          <Key>
+            <PropertyRef Name="contribution" />
+          </Key>
+          <Property Name="rangeMin" Type="Double" />
+          <Property Name="rangeMax" Type="Double" />
+          <Property Name="contribution" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SssTable">
+          <Key>
+            <PropertyRef Name="contribution" />
+          </Key>
+          <Property Name="rangeMin" Type="Double" />
+          <Property Name="rangeMax" Type="Double" />
+          <Property Name="contribution" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TaxTable">
+          <Key>
+            <PropertyRef Name="status" />
+            <PropertyRef Name="bracket" />
+            <PropertyRef Name="rangeMax" />
+            <PropertyRef Name="period" />
+          </Key>
+          <Property Name="status" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bracket" Type="Int32" Nullable="false" />
+          <Property Name="rangeMax" Type="Double" Nullable="false" />
+          <Property Name="period" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TaxTableExemption">
+          <Key>
+            <PropertyRef Name="bracket" />
+            <PropertyRef Name="exemption" />
+            <PropertyRef Name="percentage" />
+            <PropertyRef Name="period" />
+          </Key>
+          <Property Name="bracket" Type="Int32" Nullable="false" />
+          <Property Name="exemption" Type="Double" Nullable="false" />
+          <Property Name="percentage" Type="Double" Nullable="false" />
+          <Property Name="period" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DBPayrollEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GsisTables" EntityType="Self.GsisTable" />
+          <EntitySet Name="PagibigTables" EntityType="Self.PagibigTable" />
+          <EntitySet Name="PhilhealthTables" EntityType="Self.PhilhealthTable" />
+          <EntitySet Name="SssTables" EntityType="Self.SssTable" />
+          <EntitySet Name="TaxTables" EntityType="Self.TaxTable" />
+          <EntitySet Name="TaxTableExemptions" EntityType="Self.TaxTableExemption" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBPayrollModelStoreContainer" CdmEntityContainer="DBPayrollEntities">
+          <EntitySetMapping Name="GsisTables">
+            <EntityTypeMapping TypeName="DBPayrollModel.GsisTable">
+              <MappingFragment StoreEntitySet="GsisTable">
+                <ScalarProperty Name="percentage" ColumnName="percentage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PagibigTables">
+            <EntityTypeMapping TypeName="DBPayrollModel.PagibigTable">
+              <MappingFragment StoreEntitySet="PagibigTable">
+                <ScalarProperty Name="rangeMin" ColumnName="rangeMin" />
+                <ScalarProperty Name="rangeMax" ColumnName="rangeMax" />
+                <ScalarProperty Name="percentage" ColumnName="percentage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhilhealthTables">
+            <EntityTypeMapping TypeName="DBPayrollModel.PhilhealthTable">
+              <MappingFragment StoreEntitySet="PhilhealthTable">
+                <ScalarProperty Name="rangeMin" ColumnName="rangeMin" />
+                <ScalarProperty Name="rangeMax" ColumnName="rangeMax" />
+                <ScalarProperty Name="contribution" ColumnName="contribution" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SssTables">
+            <EntityTypeMapping TypeName="DBPayrollModel.SssTable">
+              <MappingFragment StoreEntitySet="SssTable">
+                <ScalarProperty Name="rangeMin" ColumnName="rangeMin" />
+                <ScalarProperty Name="rangeMax" ColumnName="rangeMax" />
+                <ScalarProperty Name="contribution" ColumnName="contribution" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaxTables">
+            <EntityTypeMapping TypeName="DBPayrollModel.TaxTable">
+              <MappingFragment StoreEntitySet="TaxTable">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="bracket" ColumnName="bracket" />
+                <ScalarProperty Name="rangeMax" ColumnName="rangeMax" />
+                <ScalarProperty Name="period" ColumnName="period" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaxTableExemptions">
+            <EntityTypeMapping TypeName="DBPayrollModel.TaxTableExemption">
+              <MappingFragment StoreEntitySet="TaxTableExemption">
+                <ScalarProperty Name="bracket" ColumnName="bracket" />
+                <ScalarProperty Name="exemption" ColumnName="exemption" />
+                <ScalarProperty Name="percentage" ColumnName="percentage" />
+                <ScalarProperty Name="period" ColumnName="period" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

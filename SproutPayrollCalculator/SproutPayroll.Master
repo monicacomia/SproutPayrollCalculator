@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SproutPayroll.master.cs" Inherits="SproutPayrollCalculator.SproutPayroll" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="<%=ResolveUrl("~/") %>Assets/css/stylesheet.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="<%=ResolveUrl("~/") %>Assets/js/knockout-3.4.2.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="topnav">
+        <a runat="server" href="~/PayrollCalculator">Payroll Calculator</a>
+        <a runat="server" href="~/MyProfile">My Profile</a>
+    </div>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

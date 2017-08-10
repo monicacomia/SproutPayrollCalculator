@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBPayrollModelStoreContainer" CdmEntityContainer="DBPayrollEntities">
+    <EntitySetMapping Name="GsisTables">
+      <EntityTypeMapping TypeName="DBPayrollModel.GsisTable">
+        <MappingFragment StoreEntitySet="GsisTable">
+          <ScalarProperty Name="percentage" ColumnName="percentage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PagibigTables">
+      <EntityTypeMapping TypeName="DBPayrollModel.PagibigTable">
+        <MappingFragment StoreEntitySet="PagibigTable">
+          <ScalarProperty Name="rangeMin" ColumnName="rangeMin" />
+          <ScalarProperty Name="rangeMax" ColumnName="rangeMax" />
+          <ScalarProperty Name="percentage" ColumnName="percentage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhilhealthTables">
+      <EntityTypeMapping TypeName="DBPayrollModel.PhilhealthTable">
+        <MappingFragment StoreEntitySet="PhilhealthTable">
+          <ScalarProperty Name="rangeMin" ColumnName="rangeMin" />
+          <ScalarProperty Name="rangeMax" ColumnName="rangeMax" />
+          <ScalarProperty Name="contribution" ColumnName="contribution" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SssTables">
+      <EntityTypeMapping TypeName="DBPayrollModel.SssTable">
+        <MappingFragment StoreEntitySet="SssTable">
+          <ScalarProperty Name="rangeMin" ColumnName="rangeMin" />
+          <ScalarProperty Name="rangeMax" ColumnName="rangeMax" />
+          <ScalarProperty Name="contribution" ColumnName="contribution" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaxTables">
+      <EntityTypeMapping TypeName="DBPayrollModel.TaxTable">
+        <MappingFragment StoreEntitySet="TaxTable">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="bracket" ColumnName="bracket" />
+          <ScalarProperty Name="rangeMax" ColumnName="rangeMax" />
+          <ScalarProperty Name="period" ColumnName="period" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaxTableExemptions">
+      <EntityTypeMapping TypeName="DBPayrollModel.TaxTableExemption">
+        <MappingFragment StoreEntitySet="TaxTableExemption">
+          <ScalarProperty Name="bracket" ColumnName="bracket" />
+          <ScalarProperty Name="exemption" ColumnName="exemption" />
+          <ScalarProperty Name="percentage" ColumnName="percentage" />
+          <ScalarProperty Name="period" ColumnName="period" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
