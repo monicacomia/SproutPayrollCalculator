@@ -4,7 +4,6 @@ html {
   height: 100%; }
 
 .topnav {
-  position: fixed;
   background-color: #454546;
   overflow: auto;
   margin-left: 0;
@@ -35,36 +34,54 @@ html {
 
 body {
   height: 100%;
-  margin: 0;
+  margin: 0 auto;
   color: #6C9B41;
   font-family: "Rambla", sans-serif;
-  background-image: url("../Test/bg.jpg"); }
+  background: url("../Test/bg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
 
 h1 {
   text-align: left;
   margin-left: 12%;
-  margin-top: 0;
-  padding-top: 5%;
-  font-size: 45px;
-  color: #6C9B41; }
+  margin-top: 3%;
+  font-size: 45px; }
 
-.container {
-  height: 600px;
+.employeeDetails {
+  height: 860px;
+  padding-top: 3px;
+  padding-bottom: 3px;
   width: 80%;
   margin: 0 auto;
-  margin-top: 5%;
-  background-color: white; }
+  background-color: white;
+  opacity: 0.85; }
+
+.login {
+  height: 400px;
+  margin-top: 500px;
+  padding-top: 270px;
+  padding-right: 90px;
+  width: 50%;
+  margin: 0 auto;
+  background-color: white;
+  opacity: 0.85; }
+
+input {
+  margin-top: 100px; }
 
 input:focus {
   outline-style: none !important;
   border-color: #ACEE6A;
   color: #345F0C; }
 
-.asp-textbox {
+.textbox {
   border: 3px solid #6C9B41;
   border-radius: 30px;
   height: 45px;
   width: 300px;
+  margin: 10px;
   padding-left: 26px;
   padding-right: 10px;
   color: #6C9B41;
@@ -72,7 +89,7 @@ input:focus {
   font-size: 17px;
   display: block; }
 
-.asp-dropdown {
+.dropdown {
   border: 3px solid #6C9B41;
   border-radius: 30px;
   height: 50px;
@@ -85,23 +102,6 @@ input:focus {
   font-size: 17px;
   -moz-appearance: none;
   display: block; }
-
-.dropdown1 {
-  float: right;
-  display: block;
-  background-color: #454546;
-  color: #D9D9D9;
-  text-align: center;
-  padding: 25px 25px;
-  margin-right: 25px;
-  text-decoration: none;
-  font-size: 20px;
-  border: 0; }
-
-select .dropdown1:hover {
-  -webkit-transition: background-color 0.2s linear;
-  color: #EEEEEE;
-  font-family: "Rambla", sans-serif; }
 
 select:hover {
   -webkit-transition: background-color 0.2s linear;
@@ -122,7 +122,7 @@ label {
   width: 41%;
   padding: 15px; }
 
-.asp-button {
+button {
   border: none;
   color: #6C9B41;
   padding: 15px 32px;
@@ -130,7 +130,12 @@ label {
   display: inline-block;
   font-size: 20px;
   border-radius: 30px;
-  font-family: "Rambla", sans-serif;
+  font-family: "Rambla", sans-serif; }
+
+button:focus {
+  outline: 0 !important; }
+
+.button1 {
   float: right;
   margin-top: 5%;
   margin-right: 21%;
@@ -138,13 +143,10 @@ label {
   color: #6C9B41;
   border: 3px solid #6C9B41; }
 
-.asp-button:hover {
+.button1:hover {
   -webkit-transition: background-color 0.2s linear;
   background-color: #6C9B41;
   color: white;
   cursor: pointer; }
-
-.asp-button:focus {
-  outline: 0 !important; }
 
 /*# sourceMappingURL=stylesheet.css.map */
