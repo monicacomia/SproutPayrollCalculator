@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+      <title>Payroll Calculator</title>
+      <script type="text/javascript" src="./knockout.js"></script>
+      <link type="text/css" rel="stylesheet" href="./css/stylesheet.css"/>
+
+      <body>
+        <div class="topnav">
+          <a href="#calculator">Payroll Calculator</a>
+          <a href="payslipHistory.html">Payslip History</a>
+        </div>
+
+        <div class="employeeDetails">
+        <h1>Payroll Calculator</h1>
+        <section id = "calculator" class = "demo">
+
+            <form>
+              <p><label>Basic salary </label><input class="textbox" type="number" data-bind="validate: basicSalary"></p>
+              <p><label>Period</label>
+                  <select class = "dropdown" data-bind= "options: $root.Period, value: salaryPeriod, optionsText: 'period'"></select>
+              </p>
+              <p><label>Status</label>
+                  <select class = "dropdown" data-bind= "options: $root.Status, value: employeeStatus, optionsText: 'status'"></select>
+              </p>
+              <p><label>Sector</label>
+                  <select class = "dropdown" data-bind= "options: $root.Sector, value: workSector, optionsText: 'sector'"></select>
+              </p>
+              <p>
+                 <button class = "button1" data-bind = "click: btnCompute">Compute</button></p>
+            </form>
+        </section>
+        </div>
+        <script type="text/javascript" src="./ViewModel.js"></script>
+      </body>
+</html>
