@@ -1,6 +1,5 @@
-﻿@import url('https://fonts.googleapis.com/css?family=Rambla:700');
+@import url('https://fonts.googleapis.com/css?family=Rambla:700');
 @import url('https://fonts.googleapis.com/css?family=Palanquin:300|Rambla:700');
-
 $primaryFont: 'Rambla', sans-serif;
 $primaryFontcolor: #6C9B41;
 $inputFont: 'Palanquin', sans-serif;
@@ -10,15 +9,13 @@ html {
 }
 
 .topnav {
-    position: fixed;
     background-color: #454546;
-    overflow: auto;
+    overflow:auto;
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
     width: 100%;
 }
-
 /* Style the links inside the navigation bar */
 .topnav a {
     float: right;
@@ -30,112 +27,102 @@ html {
     text-decoration: none;
     font-size: 20px;
 }
-
 /* Change the color of links on hover */
 .topnav a:hover {
     -webkit-transition: background-color 0.2s linear;
     color: #EEEEEE;
 }
-
 /* Add a color to the active/current link */
 .topnav a.active {
     background-color: #4CAF50;
     color: white;
 }
-
 body {
     height: 100%;
-    margin: 0;
+    margin: 0 auto;
     color: $primaryFontcolor;
     font-family: $primaryFont;
-    background-image: url('../Test/bg.jpg');
+
+    background: url("../Test/bg.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 h1 {
     text-align: left;
     margin-left: 12%;
-    margin-top: 0;
-    padding-top: 5%;
+    margin-top: 3%;
     font-size: 45px;
-    color: $primaryFontcolor;
 }
-
-
-.container {
-    height: 600px;
+.employeeDetails {
+    height: 100%;
+    padding-top: 3px;
+    padding-bottom: 3px;
     width: 80%;
     margin: 0 auto;
-    margin-top: 5%;
     background-color: white;
-}
+    opacity: 0.85;
 
+}
+.login {
+    height: 400px;
+    margin-top: 500px;
+    padding-top: 270px;
+    padding-right: 90px;
+    width: 50%;
+    margin: 0 auto;
+    background-color: white;
+    opacity: 0.85;
+}
+input{
+  margin-top: 100px;
+}
 input:focus {
     outline-style: none !important;
     border-color: #ACEE6A;
     color: #345F0C;
 }
-
-.asp-textbox {
+.textbox {
     border: 3px solid #6C9B41;
     border-radius: 30px;
     height: 45px;
     width: 300px;
-    padding-left: 26px;
-    padding-right: 10px;
+    margin: 10px;
+    padding-left:26px;
+    padding-right:10px;
     color: $primaryFontcolor;
     font-family: $inputFont;
     font-size: 17px;
     display: block;
 }
-
-.asp-dropdown {
+.dropdown {
     border: 3px solid #6C9B41;
     border-radius: 30px;
     height: 50px;
     width: 343px;
-    padding: 2px 10px;
-    padding-left: 20px;
-    padding-right: 15px;
+    padding:2px 10px;
+    padding-left:20px;
+    padding-right:15px;
     color: $primaryFontcolor;
     font-family: $inputFont;
     font-size: 17px;
     -moz-appearance: none;
     display: block;
 }
-
-.dropdown1 {
-    float: right;
-    display: block;
-    background-color: #454546;
-    color: #D9D9D9;
-    text-align: center;
-    padding: 25px 25px;
-    margin-right: 25px;
-    text-decoration: none;
-    font-size: 20px;
-    border: 0;
-}
-
-select .dropdown1:hover {
-    -webkit-transition: background-color 0.2s linear;
-    color: #EEEEEE;
-    font-family: $primaryFont;
-}
-
 select:hover {
     -webkit-transition: background-color 0.2s linear;
-    background-color: #6C9B41;
+    background-color:  #6C9B41;
     color: white;
 }
-
 select:focus {
     outline-style: none !important;
-    background-color: white;
+    background-color:  white;
     color: #6C9B41;
     -moz-appearance: none;
     -webkit-appearance: none;
 }
-
 label {
     font-size: 18px;
     float: left;
@@ -143,8 +130,7 @@ label {
     width: 41%;
     padding: 15px;
 }
-
-.asp-button {
+button {
     border: none;
     color: $primaryFontcolor;
     padding: 15px 32px;
@@ -153,7 +139,11 @@ label {
     font-size: 20px;
     border-radius: 30px;
     font-family: $primaryFont;
-
+}
+button:focus {
+    outline:0 !important;
+}
+.button1 {
     float: right;
     margin-top: 5%;
     margin-right: 21%;
@@ -161,14 +151,36 @@ label {
     color: #6C9B41;
     border: 3px solid #6C9B41;
 }
-
-.asp-button:hover {
+.button1:hover {
     -webkit-transition: background-color 0.2s linear;
     background-color: #6C9B41;
     color: white;
     cursor: pointer;
 }
 
-.asp-button:focus {
-    outline: 0 !important;
-}   
+#toggle {
+    display: none;
+    visibility: hidden;
+}
+
+.viewMore::before {
+  text-align: center;
+  display: inline-block;
+  width: 20px;
+  height: 50px;
+}
+
+#expand {
+  margin-top: 50px;
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.5s;
+  color: $primaryFontcolor;
+}
+
+#toggle:checked ~ #expand {
+  height: 550px;
+}
+#toggle:checked ~ label::before {
+
+}

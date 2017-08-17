@@ -12,14 +12,17 @@
 </head>
 <body>
     <div class="topnav">
-        <a runat="server" href="~/PayrollCalculator">Payroll Calculator</a>
-        <a runat="server" href="~/MyProfile">My Profile</a>
+        <a href="PayrollCalculator.aspx">Payroll Calculator</a>
+        <a hreF="PayslipHistory.aspx">Payslip History</a>
     </div>
+    <div class="box">
     <form id="form1" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
+    </div>
+    <script type="text/javascript" src="<%=ResolveUrl("~/") %>Assets/js/ViewModel.js"></script>
 </body>
 </html>

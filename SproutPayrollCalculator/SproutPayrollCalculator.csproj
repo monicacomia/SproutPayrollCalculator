@@ -73,7 +73,38 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\bootstrap.min.css" />
+    <Content Include="Assets\css\font-awesome.min.css" />
+    <Content Include="Assets\css\stylesheet.css.map" />
+    <Content Include="Assets\css\bootstrap.min.css.map" />
+    <Content Include="Assets\font\fontawesome-webfont.eot" />
+    <Content Include="Assets\font\fontawesome-webfont.ttf" />
+    <Content Include="Assets\font\fontawesome-webfont.woff" />
+    <Content Include="Assets\font\fontawesome-webfont.woff2" />
+    <Content Include="Assets\font\FontAwesome.otf" />
+    <Content Include="Assets\less\animated.less" />
+    <Content Include="Assets\less\bordered-pulled.less" />
+    <Content Include="Assets\less\core.less" />
+    <Content Include="Assets\less\fixed-width.less" />
+    <Content Include="Assets\less\font-awesome.less" />
+    <Content Include="Assets\less\icons.less" />
+    <Content Include="Assets\less\larger.less" />
+    <Content Include="Assets\less\list.less" />
+    <Content Include="Assets\less\mixins.less" />
+    <Content Include="Assets\less\path.less" />
+    <Content Include="Assets\less\rotated-flipped.less" />
+    <Content Include="Assets\less\screen-reader.less" />
+    <Content Include="Assets\less\stacked.less" />
+    <Content Include="Assets\less\variables.less" />
+    <Content Include="Assets\scss\font-awesome.scss" />
+    <Content Include="Login.aspx" />
     <None Include="Assets\scss\stylesheet.scss" />
+    <Content Include="Assets\css\agency.css" />
+    <Content Include="Assets\css\agency.min.css" />
+    <Content Include="Assets\font\fontawesome-webfont.svg" />
+    <Content Include="Assets\img\bg.jpg" />
+    <Content Include="Assets\js\bootstrap.min.js" />
+    <Content Include="Assets\js\jquery-3.2.1.min.js" />
     <Content Include="packages.config" />
     <EntityDeploy Include="Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -82,7 +113,22 @@
     <Content Include="Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
+    <Content Include="PayslipHistory.aspx" />
     <Content Include="SproutPayroll.Master" />
+    <Content Include="Assets\scss\_animated.scss" />
+    <Content Include="Assets\scss\_bordered-pulled.scss" />
+    <Content Include="Assets\scss\_core.scss" />
+    <Content Include="Assets\scss\_fixed-width.scss" />
+    <Content Include="Assets\scss\_icons.scss" />
+    <Content Include="Assets\scss\_larger.scss" />
+    <Content Include="Assets\scss\_list.scss" />
+    <Content Include="Assets\scss\_mixins.scss" />
+    <Content Include="Assets\scss\_path.scss" />
+    <Content Include="Assets\scss\_rotated-flipped.scss" />
+    <Content Include="Assets\scss\_screen-reader.scss" />
+    <Content Include="Assets\scss\_stacked.scss" />
+    <Content Include="Assets\scss\_variables.scss" />
+    <Content Include="Login.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -111,6 +157,13 @@
     <Compile Include="GsisTable.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Login.Master.cs">
+      <DependentUpon>Login.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.Master.designer.cs">
+      <DependentUpon>Login.Master</DependentUpon>
+    </Compile>
     <Compile Include="Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -136,6 +189,13 @@
     <Compile Include="PayrollCalculator.aspx.designer.cs">
       <DependentUpon>PayrollCalculator.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PayslipHistory.aspx.cs">
+      <DependentUpon>PayslipHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayslipHistory.aspx.designer.cs">
+      <DependentUpon>PayslipHistory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PhilhealthTable.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -155,6 +215,13 @@
     </Compile>
     <Compile Include="TaxTableExemption.cs">
       <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
